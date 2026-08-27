@@ -1,0 +1,39 @@
+name: build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    name: Build (Qt ${{ matrix.qt }})
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        qt: [ "5", "6" ]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Qt 5 dependencies
+        if: matrix.qt == '5'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            build-essential qtbase5-dev qtbase5-dev-tools libqt5sql5-sqlite pkg-config
+
+      - name: Install Qt 6 dependencies
+        if: matrix.qt == '6'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            build-essential qt6-base-dev qt6-base-dev-tools libqt6sql6-sqlite pkg-config
+
+      - name: Build
+        run: make QT_VERSION=${{ matrix.qt }} -j"$(nproc)"
+
+      - name: Verify binary
+        run: test -x ./timetracker
