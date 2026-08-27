@@ -1,0 +1,30 @@
+# Build output
+/build/
+/timetracker
+*.o
+*.obj
+moc_*.cpp
+moc_*.h
+qrc_*.cpp
+ui_*.h
+*.moc
+
+# Qt / qmake
+*.pro.user
+Makefile.qmake
+.qmake.stash
+
+# Databases / local data
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.csv
+
+# Editor / OS
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db

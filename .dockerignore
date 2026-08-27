@@ -1,0 +1,13 @@
+.git
+.github
+build/
+timetracker
+*.o
+*.db
+*.db-shm
+*.db-wal
+*.csv
+*.md
+!README.md
+.vscode
+.idea
