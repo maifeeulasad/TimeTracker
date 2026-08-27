@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=TimeTracker
+Comment=Persistent time tracking for Ubuntu desktop
+Exec=timetracker
+Icon=preferences-system-time
+Terminal=false
+Categories=Utility;Office;ProjectManagement;
+Keywords=time;tracker;productivity;timer;pomodoro;
+StartupNotify=true

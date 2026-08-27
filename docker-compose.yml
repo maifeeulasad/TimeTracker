@@ -1,0 +1,29 @@
+# ====================================================================
+# File: docker-compose.yml
+# TimeTracker — Persistent time tracking for Ubuntu
+# Author: Maifee Ul Asad
+# License: MIT
+#
+# Before first run (X11):
+#   xhost +local:docker
+#
+# Start:
+#   docker compose up --build
+# ====================================================================
+
+services:
+  timetracker:
+    build: .
+    container_name: timetracker
+    environment:
+      - DISPLAY=${DISPLAY}
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - tt-data:/root/.local/share/TimeTracker
+      - tt-config:/root/.config/MaifeeUlAsad
+    network_mode: host
+    restart: unless-stopped
+
+volumes:
+  tt-data:
+  tt-config:
