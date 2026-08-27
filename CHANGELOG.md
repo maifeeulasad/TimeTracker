@@ -5,6 +5,14 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Fixed
+
+- Docker/compose/README now mount the data volume at the real Qt data path
+  (`~/.local/share/MaifeeUlAsad/TimeTracker`), so the SQLite database actually
+  persists across container runs.
+
 ## [1.0.0] - 2026-08-27
 
 ### Added

@@ -71,7 +71,7 @@ docker build -t timetracker .
 docker run --rm -it \
   -e DISPLAY=$DISPLAY \
   -v /tmp/.X11-unix:/tmp/.X11-unix \
-  -v tt-data:/root/.local/share/TimeTracker \
+  -v tt-data:/root/.local/share/MaifeeUlAsad/TimeTracker \
   timetracker
 ```
 
@@ -123,7 +123,7 @@ Open **Settings** from the main window. Everything is persisted in:
 The SQLite database lives at:
 
 ```
-~/.local/share/TimeTracker/timetracker.db
+~/.local/share/MaifeeUlAsad/TimeTracker/timetracker.db
 ```
 
 (Change this in Settings → Database → Browse.)

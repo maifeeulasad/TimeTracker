@@ -19,7 +19,7 @@ services:
       - DISPLAY=${DISPLAY}
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
-      - tt-data:/root/.local/share/TimeTracker
+      - tt-data:/root/.local/share/MaifeeUlAsad
       - tt-config:/root/.config/MaifeeUlAsad
     network_mode: host
     restart: unless-stopped

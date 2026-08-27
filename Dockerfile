@@ -12,7 +12,7 @@
 #   docker run --rm -it \
 #     -e DISPLAY=$DISPLAY \
 #     -v /tmp/.X11-unix:/tmp/.X11-unix \
-#     -v tt-data:/root/.local/share/TimeTracker \
+#     -v tt-data:/root/.local/share/MaifeeUlAsad/TimeTracker \
 #     timetracker
 #
 # Run (Wayland — GNOME / Sway):
@@ -21,7 +21,7 @@
 #     -e XDG_RUNTIME_DIR=$XDG_RUNTIME_DIR \
 #     -e QT_QPA_PLATFORM=wayland \
 #     -v $XDG_RUNTIME_DIR/$WAYLAND_DISPLAY:/tmp/$WAYLAND_DISPLAY \
-#     -v tt-data:/root/.local/share/TimeTracker \
+#     -v tt-data:/root/.local/share/MaifeeUlAsad/TimeTracker \
 #     timetracker
 # ====================================================================
 
@@ -43,6 +43,6 @@ COPY Makefile ./
 
 RUN make -j"$(nproc)"
 
-RUN mkdir -p /root/.local/share/TimeTracker
+RUN mkdir -p /root/.local/share/MaifeeUlAsad/TimeTracker
 
 CMD ["./timetracker"]
